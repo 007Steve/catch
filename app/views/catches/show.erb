@@ -4,3 +4,8 @@
 <h4>Type of fish : <%=  @catch.name%> </h4>
 <h3>Length : <%= @catch.length%> Inches</h3>
 <h3>Weight : <%= @catch.weight%> Pounds</h3>
+
+<form method="post" action="/catches/<%=@catch.id%>" >
+<input type="hidden" name="_method" value="delete">
+<input type="submit"  value="Delete this Catch">
+ </form>

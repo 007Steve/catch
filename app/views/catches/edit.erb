@@ -1,0 +1,15 @@
+<h1>Edit Catch  <%=@catch.name%></h1>
+
+<form  method="post" action="/catches/<%=@catch.id%>"> 
+<input type="hidden" name="_method" value="patch">
+<label>Name</label>
+<input type="text" name="name" value="<%=@catch.name%>">
+<label>Image</label>
+<input type="text" name="image" value="<%=@catch.image%>">
+<label>Length</label>
+<input type="integer" name="length" value="<%=@catch.length%>">
+<label>Weight</label>
+<input type="integer" name="weight" value="<%=@catch.weight%>">
+
+<input type="submit" name="" value="Edit Catch">
+</form>
