@@ -1,0 +1,12 @@
+<h1>All Catches</h1>
+<% @catches.each do |catch|%>
+
+<img src="<%= catch.image%>" alt="picture of a fish" width="500" height="500">
+ <h4>Type of fish :<a href="/catches/<%= catch.id%>"> <%= catch.name%> </a></h4>
+ 
+<h3>Length : <%= catch.length%> Inches</h3>
+
+<h3>Weight : <%= catch.weight%> Pounds</h3>
+<a href='/catches/<%=catch.id%>/edit' >Edit</a>
+
+<% end %>
