@@ -1,0 +1,4 @@
+class CatchesController < ApplicationController
+
+
+end
