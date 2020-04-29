@@ -10,12 +10,12 @@ class SessionsController < ApplicationController
              session[:user_id] = user.id
              redirect "/catches"
         else
-           erb :"users/login"
+             erb :"users/login"
          end
  
      end
 
-
+     #LOGOUT
     get "/logout" do 
         session.clear 
         redirect "/"
