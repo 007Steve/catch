@@ -49,12 +49,18 @@ end
   
               redirect "/catches/#{params[:id]} "
          else
-               redirect "/users/#{current_user.id}"  
+               redirect "/catches/edit"
           end
            
     end
 
 #DESTROY
     #delete
+    delete "/catches/:id" do 
 
+         @catch = Catch.find(params[:id])
+         @catch.destroy
+         redirect "/catches"
+        
+    end
 end
