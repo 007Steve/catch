@@ -6,7 +6,7 @@ class ApplicationController < Sinatra::Base
   set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions 
-    set :sessions_secret, "bca"
+    set :session_secret, "bca"
 end
 
   get "/" do
@@ -14,28 +14,27 @@ end
   end
 
   helpers do 
-    def logged_in?
-     session[:user_id]
-     
-    end
-
-    def current_user
-       @user ||= User.find_by(id: session[:user_id])
-        
-    end
-    def redirect_if_not_logged_in
-      if !logged_in?
-        redirect "/login"
-      end
-    end
-
-    def redirect_if_logged_in
-      if logged_in?
-        redirect "/catches"
-        end
+     def logged_in?
+      session[:user_id]
       
-    end
-  
+     end
+ 
+     def current_user
+         @user ||= User.find_by(id: session[:user_id])
+         
+     end
+     def redirect_if_not_logged_in
+       if !logged_in?
+         redirect "/login"
+       end
+     end
+ 
+     def redirect_if_logged_in
+       if logged_in?
+         redirect "/catches"
+         end
+       
+     end
   end
 
 

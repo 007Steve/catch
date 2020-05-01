@@ -1,43 +1,64 @@
 class CatchesController < ApplicationController
 #CREATE
     #new
-get "/catches/new" do
+ get "/catches/new" do
+    if logged_in?
         erb :'/catches/new'
+    else
+        redirect '/login'
     end
+ end
 
     #create
     post '/catches' do
+        
         new_catch = Catch.new(params)
         #*
         if new_catch.save
   
             redirect "/catches"
         else
-             # @error = "Please fill in all information."
+             
               redirect "/catches/new"
         end
         
     end
-#READ
+ #READ
     #index
-get "/catches" do
-    @catches = Catch.all.reverse
-    erb :'catches/index'
-end
+ get "/catches" do
+    
+    if logged_in?
+        @catches = Catch.all.reverse
+        erb :'catches/index'
+    else
+       redirect 'login'
+    end
+ end
 
     #show
-get "/catches/:id" do
-     @catch = Catch.find(params[:id])
-    erb :'catches/show'
-end
+    
+ get "/catches/:id" do
+    if logged_in?
+         @catch = Catch.find(params[:id])
+        
+        erb :'catches/show'
+    else
+        redirect '/login'
+    end
+ end
 
-#UPDATE
+ #UPDATE
     #edit
-get "/catches/:id/edit" do
+ get "/catches/:id/edit" do
+    user = User.all
     @catch = Catch.find(params[:id])
-
-    erb :'/catches/edit'
-end
+    #if current_user.id == @catch.user.id
+        
+        erb :'/catches/edit'
+    #else
+        #redirect'/catches'
+    #end
+end        
     #patch
     patch '/catches/:id' do
 
@@ -57,10 +78,13 @@ end
 #DESTROY
     #delete
     delete "/catches/:id" do 
-
+        user = User.all
          @catch = Catch.find(params[:id])
-         @catch.destroy
-         redirect "/catches"
-        
+         #if @catch.user.id == current_user.id
+            @catch.destroy
+            redirect "/catches"
+       # else
+           # redirect'/catches'
+       # end
     end
 end
