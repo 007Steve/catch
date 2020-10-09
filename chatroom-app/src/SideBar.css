@@ -1,0 +1,36 @@
+.sidebar{
+    display:flex ;
+    background-color: grey;
+    flex-direction: column;
+    height: 100vh;
+    flex: 0.25;
+    color: white;
+}
+
+.sidebar__top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rebeccapurple;
+    border-bottom: 3px solid #26282c;
+
+}
+
+.sidebar__channels{
+    flex: 1;
+}
+
+
+.sidebar__channelsTop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rebeccapurple;
+}
+.sidebar__channelsTopText{
+    display: flex;
+    align-items: center;
+  
+}
