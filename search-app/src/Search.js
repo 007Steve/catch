@@ -25,7 +25,7 @@ function Search() {
                 <button className="btn-grad" type="submit">Search</button>
             </form>
 
-            <div>
+            <div className="cardList">
                 {movies.map(movie => (
                     <div>
                         <img src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}  alt=""/>
