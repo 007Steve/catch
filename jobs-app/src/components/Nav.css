@@ -1,0 +1,31 @@
+
+.nav__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5964E0;
+    
+    height: 110px;
+    border-bottom-left-radius: 80px;
+}
+.nav__logo{
+  height:45px ;
+}
+
+
+.nav__icons{
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    margin-right: 40px;
+}
+
+.nav__icon{
+    padding: 10px;
+
+}
+img {
+    margin-left: 60px;
+}
+
+    

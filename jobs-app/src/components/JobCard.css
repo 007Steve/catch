@@ -1,0 +1,44 @@
+.jobCard{
+    background-color: rgb(253, 253, 253);
+    width: 80%;
+    border-radius: 10px;
+    margin-top: 50px;
+    
+}
+
+.jobCard__info{
+    text-align: left;
+    padding-left: 25px;
+}
+#image{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    bottom:  18px;
+    right:  140px;
+    border-radius: 5px;
+    object-fit: contain;
+    background-color: #5964E0;
+}
+#jobTitle{
+    padding-top:5px ;
+}
+#companyName{
+    color: slategray;
+    font-size: 14px;
+    padding-top:5px ;
+}
+.jobCard__infoTime{
+    display: flex;
+    color: slategray;
+    font-size: 14px;
+    align-items: center;
+}
+
+.jobCard__infoLocation{
+    text-align:left;
+    color:#5964E0 ;
+    font-size: 12px;
+    padding: 10px;
+    padding-left: 25px;
+}
